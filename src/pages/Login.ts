@@ -1,5 +1,5 @@
 
-import { IUser } from "../models/IUser";
+import { IUser } from "../models/IUser.js";
 const loginForm = document.getElementById("login-form") as HTMLFormElement;
 const userNameInput = document.getElementById("username") as HTMLInputElement;
 const userNameErrorMessage = document.getElementById("username-error-message") as HTMLParagraphElement;
@@ -34,7 +34,7 @@ const logIn = (event: Event): void => {
     console.log("logga in!!!!");
     
 
-    const user: IUser = {
+    const user: IUser = { 
         name: username,
     }
 
