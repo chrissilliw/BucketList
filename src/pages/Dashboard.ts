@@ -24,27 +24,6 @@ window.addEventListener('DOMContentLoaded', setNameFromLS);
 
 //    export let parsedDreams: IDream[] = [];
 
-let dreamsArray: IDream[] = [
-    {
-        id: 1,
-        name: "Lära mig HTML/CSS",
-        theme: "teknikdrömmar",
-        checked: true
-    },
-    {
-        id: 2,
-        name: "Lära mig TypeScript",
-        theme: "teknikdrömmar",
-        checked: false
-    },
-    {
-        id: 3,
-        name: "En dröm som tar flera rader lorem ipsum",
-        theme: "vardagsdrömmar",
-        checked: false
-    }
-];
-
 const dreamList = document.querySelector(".dream-list") as HTMLUListElement;
 
     const dreamsFromLS = localStorage.getItem("dreamArrayLS");
@@ -64,11 +43,6 @@ const renderDreams = ():void => {
     parsedDreams.forEach(dream => {
         const dreamItem = document.createElement("li") as HTMLLIElement;
         dreamItem.classList.add("dream-list_item");
-
-        // const dreamCheck = document.createElement("span") as HTMLSpanElement;
-        // dreamCheck.classList.add("isComplete-icon");
-        // dreamCheck.dataset.id = dream.id.toString();
-        // dreamItem.appendChild(dreamCheck);
 
         const isCheckedBox = document.createElement("input") as HTMLInputElement;
         isCheckedBox.setAttribute("type", "checkbox");
@@ -119,6 +93,7 @@ if (dreamList) {
             const id = Number(deleteBtn.dataset.id);
             console.log(`DeleteBtn: ${id}`);
             deleteTask(id);
+            localStorage.setItem("dreamArrayLS", JSON.stringify(parsedDreams));
             renderDreams();
             
         }

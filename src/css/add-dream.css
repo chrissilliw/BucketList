@@ -1,9 +1,24 @@
- @import './global.css';
- @import './page-header.css';
- @import './form.css';
+@import "./global.css";
+@import "./page-header.css";
+@import "./form.css";
 
-  h2 {
-     text-align: center;
-     font-weight: 400;
-     margin: var(--spacing-medium);
- }
+h2 {
+  text-align: center;
+  font-weight: 400;
+  margin: var(--spacing-medium);
+}
+
+.new-dream-popup {
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-weight: 600;
+}
+
+.is-hidden {
+  display: none;
+}

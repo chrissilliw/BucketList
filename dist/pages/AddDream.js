@@ -3,6 +3,7 @@ const dreamForm = document.getElementById("new-dream-form");
 const dreamInput = document.getElementById("dream-input");
 const taskError = document.getElementById("task-error");
 const dreamSelect = document.getElementById("dream-select");
+const newDreamPop = document.querySelector(".new-dream-popup");
 const addDream = (event) => {
     event === null || event === void 0 ? void 0 : event.preventDefault();
     const dream = dreamInput.value;
@@ -47,7 +48,14 @@ const addDream = (event) => {
     localStorage.setItem("dreamArrayLS", JSON.stringify(parsedDreams));
     dreamInput.value = "";
     dreamInput.focus();
-    // console.log(dreams);
+    console.log("ny dröm tillagd");
+    showNewDreamPopup();
+};
+const showNewDreamPopup = () => {
+    newDreamPop.classList.remove("is-hidden");
+    setTimeout(() => {
+        newDreamPop.classList.add("is-hidden");
+    }, 3000);
 };
 dreamForm.addEventListener("submit", addDream);
 //# sourceMappingURL=AddDream.js.map

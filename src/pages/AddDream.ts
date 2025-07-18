@@ -5,6 +5,9 @@ const dreamForm = document.getElementById("new-dream-form") as HTMLFormElement;
 const dreamInput = document.getElementById("dream-input") as HTMLInputElement;
 const taskError = document.getElementById("task-error") as HTMLParagraphElement;
 const dreamSelect = document.getElementById("dream-select") as HTMLSelectElement;
+const newDreamPop = document.querySelector(".new-dream-popup") as HTMLParagraphElement;
+
+
 
 const addDream = (event: Event): void => {
     event?.preventDefault();
@@ -63,7 +66,15 @@ const addDream = (event: Event): void => {
 
     dreamInput.focus();
 
-    // console.log(dreams);
+    console.log("ny dröm tillagd");
+    showNewDreamPopup();
+}
+
+const showNewDreamPopup = () => {
+    newDreamPop.classList.remove("is-hidden");
+    setTimeout(() => {
+        newDreamPop.classList.add("is-hidden");
+    }, 3000);
 }
 
 dreamForm.addEventListener("submit", addDream);
